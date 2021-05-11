@@ -2,6 +2,7 @@ package udt
 
 import (
 	"testing"
+	"github.com/getlantern/go-udtwrapper"
 )
 
 func TestStuff(t *testing.T) {
@@ -11,4 +12,12 @@ func TestStuff(t *testing.T) {
 	} else {
 		t.Logf("Socket is: %s", s)
 	}
+}
+
+func main() {
+	s, err := Dial("ip4", "localhost:1900")
+	if err != nil {
+		panic(err)
+	}
+
 }
